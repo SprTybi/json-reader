@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Copy to clipboard</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Occupation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>30</td>
+        <td>Software Engineer</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>25</td>
+        <td>Accountant</td>
+      </tr>
+      <tr>
+        <td>Bill Jones</td>
+        <td>40</td>
+        <td>Doctor</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    // Get all the table rows
+    var rows = document.querySelectorAll('td');
+
+    // Add a click event listener to each row
+    rows.forEach(function(row) {
+      row.addEventListener('click', function() {
+        // Get the text content of the row
+        var text = row.textContent;
+
+        // Copy the text to the clipboard
+        navigator.clipboard.writeText(text);
+      });
+    });
+  </script>
+</body>
+</html>
